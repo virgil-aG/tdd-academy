@@ -89,7 +89,7 @@ class TodoExercisesTest {
         // 3. Verify that animalRepository.save(simba) was called exactly once
 
         simba.setId(1L);
-        
+
         when(animalRepository.save(any(Animal.class))).thenReturn(simba);
 
         animalService.createAnimal(simba);
@@ -107,14 +107,13 @@ class TodoExercisesTest {
         // 2. Mock animalRepository.findAll() to return this stub data
         // 3. Call animalService.getAverageWeight()
         // 4. Assert the average is 114.33 (with 0.01 precision)
-        
-        // Your code here:
-        // List<Animal> animals = Arrays.asList(simba, nala, timon);
-        // when(animalRepository.findAll()).thenReturn(animals);
-        //
-        // double averageWeight = animalService.getAverageWeight();
-        //
-        // assertEquals(114.33, averageWeight, 0.01);
+
+        List<Animal> animals = Arrays.asList(simba, nala, timon);
+        when(animalRepository.findAll()).thenReturn(animals);
+
+        double averageWeight = animalService.getAverageWeight();
+
+        assertEquals(114.33, averageWeight, 0.01);
     }
 
     @Test
@@ -124,13 +123,12 @@ class TodoExercisesTest {
         // 1. Mock animalRepository.findAll() to return empty list
         // 2. Call animalService.getAverageWeight()
         // 3. Assert the result is 0.0
-        
-        // Your code here:
-        // when(animalRepository.findAll()).thenReturn(Arrays.asList());
-        //
-        // double averageWeight = animalService.getAverageWeight();
-        //
-        // assertEquals(0.0, averageWeight, 0.01);
+
+        when(animalRepository.findAll()).thenReturn(Arrays.asList());
+
+        double averageWeight = animalService.getAverageWeight();
+
+        assertEquals(0.0, averageWeight, 0.01);
     }
 
     @Test
@@ -140,13 +138,12 @@ class TodoExercisesTest {
         // 1. Mock animalRepository.count() to return 15
         // 2. Call animalService.getAnimalCount()
         // 3. Assert the result is 15
-        
-        // Your code here:
-        // when(animalRepository.count()).thenReturn(15);
-        //
-        // int count = animalService.getAnimalCount();
-        //
-        // assertEquals(15, count);
+
+        when(animalRepository.count()).thenReturn(15);
+
+        int count = animalService.getAnimalCount();
+
+        assertEquals(15, count);
     }
 
     // ========== SPY EXERCISES ==========
