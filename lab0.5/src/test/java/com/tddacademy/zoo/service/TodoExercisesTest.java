@@ -158,18 +158,17 @@ class TodoExercisesTest {
         //    - to: "staff@zoo.com"
         //    - subject: "New Animal Added"
         //    - message containing "Simba"
-        
-        // Your code here:
-        // simba.setId(1L);
-        // when(animalRepository.save(any(Animal.class))).thenReturn(simba);
-        //
-        // zooManager.addNewAnimal(simba);
-        //
-        // verify(notificationService, times(1)).sendEmail(
-        //     eq("staff@zoo.com"),
-        //     eq("New Animal Added"),
-        //     contains("Simba")
-        // );
+
+        simba.setId(1L);
+        when(animalRepository.save(any(Animal.class))).thenReturn(simba);
+
+        zooManager.addNewAnimal(simba);
+
+        verify(notificationService, times(1)).sendEmail(
+             eq("staff@zoo.com"),
+             eq("New Animal Added"),
+            contains("Simba")
+        );
     }
 
     @Test
@@ -183,19 +182,18 @@ class TodoExercisesTest {
         // 5. Verify that notificationService.sendSMS was called with:
         //    - phone: "+1234567890"
         //    - message containing "Simba"
-        
-        // Your code here:
-        // simba.setId(1L);
-        // when(animalRepository.findById(1L)).thenReturn(Optional.of(simba));
-        // when(animalRepository.existsById(1L)).thenReturn(true);
-        // doNothing().when(animalRepository).deleteById(1L);
-        //
-        // zooManager.removeAnimal(1L);
-        //
-        // verify(notificationService, times(1)).sendSMS(
-        //     eq("+1234567890"),
-        //     contains("Simba")
-        // );
+
+        simba.setId(1L);
+        when(animalRepository.findById(1L)).thenReturn(Optional.of(simba));
+        when(animalRepository.existsById(1L)).thenReturn(true);
+        doNothing().when(animalRepository).deleteById(1L);
+
+        zooManager.removeAnimal(1L);
+
+        verify(notificationService, times(1)).sendSMS(
+            eq("+1234567890"),
+            contains("Simba")
+        );
     }
 
     @Test
@@ -205,15 +203,14 @@ class TodoExercisesTest {
         // 1. Mock animalRepository.findById(1L) to return simba with health status "Healthy"
         // 2. Call zooManager.checkAnimalHealth(1L)
         // 3. Verify that notificationService.sendEmail was NEVER called
-        
-        // Your code here:
-        // simba.setId(1L);
-        // simba.setHealthStatus("Healthy");
-        // when(animalRepository.findById(1L)).thenReturn(Optional.of(simba));
-        //
-        // zooManager.checkAnimalHealth(1L);
-        //
-        // verify(notificationService, never()).sendEmail(any(), any(), any());
+
+        simba.setId(1L);
+        simba.setHealthStatus("Healthy");
+        when(animalRepository.findById(1L)).thenReturn(Optional.of(simba));
+
+        zooManager.checkAnimalHealth(1L);
+
+        verify(notificationService, never()).sendEmail(any(), any(), any());
     }
 
     // ========== ADVANCED EXERCISES ==========
