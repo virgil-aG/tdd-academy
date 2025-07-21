@@ -56,12 +56,11 @@ class TodoExercisesTest {
         // 2. Call animalService.getAnimalsBySpecies("Lion")
         // 3. Assert that the result contains 2 animals
         // 4. Assert that both animals are lions
-        
-        // Your code here:
+
         when(animalRepository.findBySpecies("Lion")).thenReturn(Arrays.asList(simba, nala));
-        //
+
         List<Animal> lions = animalService.getAnimalsBySpecies("Lion");
-        //
+
         assertEquals(2, lions.size());
         assertTrue(lions.stream().allMatch(animal -> "Lion".equals(animal.getSpecies())));
     }
@@ -73,12 +72,11 @@ class TodoExercisesTest {
         // 1. Mock animalRepository.findById(999L) to return Optional.empty()
         // 2. Call animalService.getAnimalById(999L)
         // 3. Assert that the result is empty
-        
-        // Your code here:
+
         when(animalRepository.findById(999L)).thenReturn(Optional.empty());
-        //
+
         Optional<Animal> result = animalService.getAnimalById(999L);
-        //
+
         assertTrue(result.isEmpty());
     }
 
@@ -89,13 +87,13 @@ class TodoExercisesTest {
         // 1. Mock animalRepository.save(any(Animal.class)) to return simba with ID 1
         // 2. Call animalService.createAnimal(simba)
         // 3. Verify that animalRepository.save(simba) was called exactly once
-        
-        // Your code here:
+
         simba.setId(1L);
+        
         when(animalRepository.save(any(Animal.class))).thenReturn(simba);
-        //
+
         animalService.createAnimal(simba);
-        //
+
         verify(animalRepository, times(1)).save(simba);
     }
 
