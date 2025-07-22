@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tddacademy.zoo.model.PersonTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2025-07-22T04:55:47" hostname="Mac" time="0.004">
+  <properties/>
+  <testcase name="Should create a valid Person with all required fields" classname="com.tddacademy.zoo.model.PersonTest" time="0.001"/>
+  <testcase name="Should throw exception when person salary is zero" classname="com.tddacademy.zoo.model.PersonTest" time="0.0"/>
+  <testcase name="Should create person with null salary" classname="com.tddacademy.zoo.model.PersonTest" time="0.0"/>
+  <testcase name="Should throw exception when person first name is null" classname="com.tddacademy.zoo.model.PersonTest" time="0.0"/>
+  <testcase name="Should throw exception when person salary is negative" classname="com.tddacademy.zoo.model.PersonTest" time="0.001"/>
+  <testcase name="Should throw exception when person email is null" classname="com.tddacademy.zoo.model.PersonTest" time="0.0"/>
+  <testcase name="Should throw exception when person last name is null" classname="com.tddacademy.zoo.model.PersonTest" time="0.0"/>
+  <testcase name="Should throw exception when person role is null" classname="com.tddacademy.zoo.model.PersonTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
