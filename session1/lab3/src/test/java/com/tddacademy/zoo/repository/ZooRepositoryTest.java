@@ -83,15 +83,14 @@ class ZooRepositoryTest {
         // 2. Use zooRepository.findByNameContainingIgnoreCase("Manila") to search
         // 3. Assert that the result contains only the Manila Zoo
         // 4. Assert that the result size is 1
-        
-        // Your code here:
-        // zooRepository.save(manilaZoo);
-        // zooRepository.save(cebuSafari);
-        //
-        // List<Zoo> manilaZoos = zooRepository.findByNameContainingIgnoreCase("Manila");
-        //
-        // assertEquals(1, manilaZoos.size());
-        // assertEquals("Manila Zoo", manilaZoos.get(0).getName());
+
+         zooRepository.save(manilaZoo);
+         zooRepository.save(cebuSafari);
+
+         List<Zoo> manilaZoos = zooRepository.findByNameContainingIgnoreCase("Manila");
+
+         assertEquals(1, manilaZoos.size());
+         assertEquals("Manila Zoo", manilaZoos.get(0).getName());
     }
 
     @Test
@@ -102,16 +101,15 @@ class ZooRepositoryTest {
         // 2. Use zooRepository.findByLocationContainingIgnoreCase("Philippines") to search
         // 3. Assert that the result contains both zoos
         // 4. Assert that the result size is 2
-        
-        // Your code here:
-        // zooRepository.save(manilaZoo);
-        // zooRepository.save(cebuSafari);
-        //
-        // List<Zoo> philippineZoos = zooRepository.findByLocationContainingIgnoreCase("Philippines");
-        //
-        // assertEquals(2, philippineZoos.size());
-        // assertTrue(philippineZoos.stream().anyMatch(zoo -> zoo.getName().equals("Manila Zoo")));
-        // assertTrue(philippineZoos.stream().anyMatch(zoo -> zoo.getName().equals("Cebu Safari")));
+
+         zooRepository.save(manilaZoo);
+         zooRepository.save(cebuSafari);
+
+         List<Zoo> philippineZoos = zooRepository.findByLocationContainingIgnoreCase("Philippines");
+
+         assertEquals(2, philippineZoos.size());
+         assertTrue(philippineZoos.stream().anyMatch(zoo -> zoo.getName().equals("Manila Zoo")));
+         assertTrue(philippineZoos.stream().anyMatch(zoo -> zoo.getName().equals("Cebu Safari")));
     }
 
     @Test
@@ -124,13 +122,12 @@ class ZooRepositoryTest {
         // 4. Assert that the zoo exists
         // 5. Use zooRepository.existsById(999L) to check non-existence
         // 6. Assert that the zoo does not exist
-        
-        // Your code here:
-        // Zoo savedZoo = zooRepository.save(manilaZoo);
-        // Long savedId = savedZoo.getId();
-        //
-        // assertTrue(zooRepository.existsById(savedId));
-        // assertFalse(zooRepository.existsById(999L));
+
+         Zoo savedZoo = zooRepository.save(manilaZoo);
+         Long savedId = savedZoo.getId();
+
+         assertTrue(zooRepository.existsById(savedId));
+         assertFalse(zooRepository.existsById(999L));
     }
 
     @Test
@@ -142,14 +139,13 @@ class ZooRepositoryTest {
         // 3. Use zooRepository.deleteById(savedId) to delete the zoo
         // 4. Use zooRepository.findById(savedId) to try to find the deleted zoo
         // 5. Assert that the zoo is not found (Optional.empty())
-        
-        // Your code here:
-        // Zoo savedZoo = zooRepository.save(manilaZoo);
-        // Long savedId = savedZoo.getId();
-        //
-        // zooRepository.deleteById(savedId);
-        // Optional<Zoo> deletedZoo = zooRepository.findById(savedId);
-        //
-        // assertTrue(deletedZoo.isEmpty());
+
+         Zoo savedZoo = zooRepository.save(manilaZoo);
+         Long savedId = savedZoo.getId();
+
+         zooRepository.deleteById(savedId);
+         Optional<Zoo> deletedZoo = zooRepository.findById(savedId);
+
+         assertTrue(deletedZoo.isEmpty());
     }
 } 
