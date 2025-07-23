@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tddacademy.zoo.service.ZooServiceTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-07-23T03:05:04" hostname="Mac" time="0.008">
+  <properties/>
+  <testcase name="Should update zoo successfully" classname="com.tddacademy.zoo.service.ZooServiceTest" time="0.003"/>
+  <testcase name="Should throw exception when deleting non-existent zoo" classname="com.tddacademy.zoo.service.ZooServiceTest" time="0.001"/>
+  <testcase name="Should throw exception when updating non-existent zoo" classname="com.tddacademy.zoo.service.ZooServiceTest" time="0.0"/>
+  <testcase name="Should return empty list when no zoos exist" classname="com.tddacademy.zoo.service.ZooServiceTest" time="0.001"/>
+  <testcase name="Should get zoo by id successfully" classname="com.tddacademy.zoo.service.ZooServiceTest" time="0.0"/>
+  <testcase name="Should check if zoo exists" classname="com.tddacademy.zoo.service.ZooServiceTest" time="0.0"/>
+  <testcase name="Should return multiple zoos when they exist" classname="com.tddacademy.zoo.service.ZooServiceTest" time="0.001"/>
+  <testcase name="Should throw exception when getting non-existent zoo" classname="com.tddacademy.zoo.service.ZooServiceTest" time="0.0"/>
+  <testcase name="Should delete zoo successfully" classname="com.tddacademy.zoo.service.ZooServiceTest" time="0.0"/>
+  <testcase name="Should create a new zoo successfully" classname="com.tddacademy.zoo.service.ZooServiceTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
